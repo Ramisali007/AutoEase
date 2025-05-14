@@ -2,8 +2,6 @@
 
 A modern full-stack car rental platform built with the **MERN stack** (MongoDB, Express, React, Node.js), featuring real-time chat, booking management, and admin tools.
 
-![AutoEase Platform](https://via.placeholder.com/800x400?text=AutoEase+Car+Rental+Platform)
-
 ---
 
 ## 🚗 Key Features
@@ -156,14 +154,6 @@ npm start
 | User  | [user@autoease.com](mailto:user@autoease.com)   | user123  |
 
 ---
-
-## 🖼️ Screenshots
-
-![Dashboard](https://via.placeholder.com/400x200?text=Dashboard)
-![Car Listings](https://via.placeholder.com/400x200?text=Car+Listings)
-![Booking Process](https://via.placeholder.com/400x200?text=Booking+Process)
-![Admin Panel](https://via.placeholder.com/400x200?text=Admin+Panel)
-
 ---
 
 ## 🔄 Recent Updates
