@@ -1,90 +1,79 @@
 # AutoEase - Car Rental Platform
 
-A modern, full-stack car rental application built with the MERN stack (MongoDB, Express, React, Node.js) featuring real-time notifications, chat functionality, and comprehensive booking management.
+A modern full-stack car rental platform built with the **MERN stack** (MongoDB, Express, React, Node.js), featuring real-time chat, booking management, and admin tools.
 
 ![AutoEase Platform](https://via.placeholder.com/800x400?text=AutoEase+Car+Rental+Platform)
 
-## 🚗 Features
+---
 
-### User Features
-- **User Authentication**: Secure registration and login with JWT
-- **Car Browsing**: Advanced filtering and search capabilities
-- **Booking Management**: Create, view, and manage bookings
-- **Reviews & Ratings**: Leave and view car reviews
-- **Real-time Chat**: Communicate with hosts and admins
-- **Notifications**: Real-time updates on booking status changes
-- **User Profile**: Manage personal information and view booking history
-- **PDF Invoice Generation**: Download booking invoices
+## 🚗 Key Features
 
-### Host Features
-- **Car Management**: Add, edit, and manage car listings
-- **Car Image Upload**: Upload multiple images for each car
-- **Booking Oversight**: View and manage bookings for their cars
-- **Host Dashboard**: Comprehensive analytics and management tools
-- **Chat with Renters**: Direct communication with potential renters
+### 👤 User Panel
 
-### Admin Features
-- **User Management**: View, edit, and manage all users
-- **Car Administration**: Add, edit, and delete any car listing
-- **Car Image Upload**: Upload car images just like hosts
-- **Booking Management**: Oversee all bookings in the system
-- **System Analytics**: View platform performance metrics
-- **Content Management**: Manage reviews, messages, and notifications
+* **Secure Authentication** with JWT
+* **Advanced Car Search** with filters
+* **Manage Bookings** and download **PDF Invoices**
+* **Real-time Notifications** for status updates
+* **Chat** with Hosts/Admins
+* **Leave Reviews & Ratings**
+* **User Dashboard** with booking history & profile settings
 
-### Technical Features
-- **Real-time Communication**: Socket.IO integration for chat and notifications
-- **Responsive Design**: Mobile-friendly interface
-- **Google Maps Integration**: Location selection and visualization
-- **Secure File Upload**: Image upload for cars and user profiles
-- **Database Optimization**: Efficient MongoDB queries and indexing
-- **API Security**: Protected routes with role-based access control
+### 🚘 Host Dashboard
 
-## 🛠️ Technology Stack
+* **Add & Manage Car Listings** with multiple images
+* **Monitor & Control Bookings** for their cars
+* **Host Analytics Dashboard**
+* **Chat** directly with renters
+
+### 🛠️ Admin Panel
+
+* **User, Car, and Booking Management**
+* **System-Wide Analytics**
+* **Manage Content** (reviews, messages, notifications)
+* **Car Upload Access** similar to Hosts
+
+### 🔧 Technical Highlights
+
+* **Real-time Chat & Notifications** with Socket.IO
+* **Google Maps Integration** for car locations
+* **Secure File Uploads** for cars and user profiles
+* **Mobile-Responsive UI**
+* **Role-Based API Security**
+* **Optimized MongoDB Performance**
+
+---
+
+## 🧱 Tech Stack
 
 ### Frontend
-- **React 19**: Modern UI library with hooks and context API
-- **React Router 7**: Client-side routing
-- **Axios**: HTTP client for API requests
-- **Socket.IO Client**: Real-time communication
-- **Google Maps API**: Location services
-- **FontAwesome**: Icon library
-- **Bootstrap 5**: Responsive styling
-- **Date-fns**: Date manipulation
-- **jsPDF**: PDF generation
+
+* **React 19**, **React Router 7**, **Bootstrap 5**
+* **Axios**, **Socket.IO Client**, **FontAwesome**
+* **Google Maps API**, **Date-fns**, **jsPDF**
 
 ### Backend
-- **Node.js**: JavaScript runtime
-- **Express 5**: Web framework
-- **MongoDB**: NoSQL database
-- **Mongoose 8**: MongoDB object modeling
-- **Socket.IO**: Real-time bidirectional communication
-- **JWT**: Authentication
-- **Bcrypt**: Password hashing
-- **Multer**: File upload handling
-- **Nodemailer**: Email services
-- **PDFKit**: Server-side PDF generation
 
-## 📋 Prerequisites
+* **Node.js**, **Express 5**, **MongoDB**, **Mongoose 8**
+* **Socket.IO**, **JWT**, **Multer**, **Bcrypt**
+* **PDFKit**, **Nodemailer**
 
-- Node.js (v16 or higher)
-- MongoDB (v5 or higher)
-- npm or yarn
-- Google Maps API key (for location features)
+---
 
-## 🚀 Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone <repository-url>
 cd AutoEase-Project
 ```
 
-### 2. Set up environment variables
+### 2. Configure Environment Variables
 
-Create `.env` files in both backend and frontend directories:
+Create `.env` files in both `/backend` and `/frontend`:
 
 **Backend (.env)**
+
 ```
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/autoease
@@ -93,108 +82,112 @@ FRONTEND_URL=http://localhost:3000
 ```
 
 **Frontend (.env)**
+
 ```
 REACT_APP_API_URL=http://localhost:5000/api
 REACT_APP_SOCKET_URL=http://localhost:5000
 REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
-# Install backend dependencies
 cd backend
 npm install
 
-# Install frontend dependencies
 cd ../frontend
 npm install
 ```
 
-### 4. Seed the database
+### 4. Seed Sample Data
 
 ```bash
-# From the backend directory
+# From backend directory
 npm run seed:all
 ```
 
-This will populate the database with sample users, cars, bookings, and reviews.
+### 5. Run the App
 
-### 5. Start the application
-
-#### Using the provided script (Windows)
+#### Option A: Using Script (Windows)
 
 ```bash
-# From the root directory
 start-app.bat
 ```
 
-#### Manual start
+#### Option B: Manual Start
 
 ```bash
-# Start the backend server (from the backend directory)
+# Backend (from /backend)
 npm run dev
 
-# Start the frontend server (from the frontend directory)
+# Frontend (from /frontend)
 npm start
 ```
 
-## 📊 Database Structure
+---
 
-The application uses MongoDB with the following collections:
+## 🗃️ MongoDB Collections
 
-- **Users**: User accounts and profiles with role-based permissions
-- **Cars**: Car listings with details, availability, and images
-- **Bookings**: Rental bookings with dates, status, and payment information
-- **Reviews**: User reviews and ratings for cars
-- **Messages**: Chat messages between users, hosts, and admins
-- **Notifications**: System notifications for users
-- **Subscribers**: Newsletter subscribers
-- **Contacts**: Contact form submissions
+* **Users**: Profiles, roles, auth
+* **Cars**: Listings, availability, images
+* **Bookings**: Status, dates, payments
+* **Reviews**: Ratings per car
+* **Messages**: User-host-admin chat
+* **Notifications**: Real-time alerts
+* **Subscribers**: Newsletter
+* **Contacts**: Contact form data
 
-## 🔐 User Roles
+---
 
-- **User**: Can browse cars, make bookings, and leave reviews
-- **Host**: Can list cars, manage their listings, and communicate with renters
-- **Admin**: Full system access to manage users, cars, bookings, and content
+## 👥 User Roles
 
-## 👤 Default Accounts
+* **User**: Browse cars, book, review
+* **Host**: List/manage cars, interact with users
+* **Admin**: Full access and control
 
-### Admin Account
-- Email: admin@autoease.com
-- Password: admin123
+---
 
-### Host Account
-- Email: host@autoease.com
-- Password: host123
+## 🧪 Test Accounts
 
-### User Account
-- Email: user@autoease.com
-- Password: user123
+| Role  | Email                                           | Password |
+| ----- | ----------------------------------------------- | -------- |
+| Admin | [admin@autoease.com](mailto:admin@autoease.com) | admin123 |
+| Host  | [host@autoease.com](mailto:host@autoease.com)   | host123  |
+| User  | [user@autoease.com](mailto:user@autoease.com)   | user123  |
 
-## 📱 Application Screenshots
+---
+
+## 🖼️ Screenshots
 
 ![Dashboard](https://via.placeholder.com/400x200?text=Dashboard)
 ![Car Listings](https://via.placeholder.com/400x200?text=Car+Listings)
 ![Booking Process](https://via.placeholder.com/400x200?text=Booking+Process)
 ![Admin Panel](https://via.placeholder.com/400x200?text=Admin+Panel)
 
+---
+
 ## 🔄 Recent Updates
 
-- Added car image upload functionality for admins
-- Implemented real-time chat between users, hosts, and admins
-- Enhanced booking management with status tracking
-- Improved user interface with responsive design
-- Added PDF invoice generation for bookings
+* Admin image upload for cars
+* Live chat between users, hosts, admins
+* Booking lifecycle status tracking
+* Responsive UI enhancements
+* PDF invoice feature
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Submit a Pull Request to get started.
+
+---
 
 ## 📄 License
 
-This project is licensed under the ISC License.
+This project is licensed under the **ISC License**.
 
-## 📞 Contact
+---
 
-For any questions or support, please contact the development team at support@autoease.com.
+## 📬 Contact Us
+
+📧 **Email**: [ramisali.k786@gmail.com](mailto:ramisali.k786@gmail.com)
