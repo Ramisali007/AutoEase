@@ -1,0 +1,157 @@
+.booking-feedback {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.booking-feedback h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.booking-feedback p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.feedback-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.rating-container {
+  margin-bottom: 15px;
+}
+
+.rating-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star.selected {
+  color: #ffc107;
+}
+
+.comment-container {
+  margin-bottom: 15px;
+}
+
+.comment-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.comment-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-feedback {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.submit-feedback:hover {
+  background-color: #45a049;
+}
+
+.submit-feedback:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Login prompt styles */
+.login-prompt {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.login-prompt p {
+  margin-bottom: 15px;
+  color: #6c757d;
+}
+
+.login-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+  color: white;
+}
+
+/* Thank you message styles */
+.booking-feedback.thank-you {
+  text-align: center;
+  padding: 30px;
+}
+
+.thank-you-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thank-you-icon {
+  background-color: #4CAF50;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.thank-you-content h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.thank-you-content p {
+  margin: 5px 0;
+}

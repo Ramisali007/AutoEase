@@ -1,0 +1,67 @@
+/* Subscribers styles that complement the admin dashboard */
+.subscribers-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: transparent;
+}
+
+.subscribers-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: rgba(67, 97, 238, 0.03);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(67, 97, 238, 0.1);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #4361ee !important;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  outline: none;
+}
+
+.sort-controls select:focus {
+  border-color: #4361ee;
+  outline: none;
+}
+
+/* Table styles are now inherited from AdminDashboard.css */
+.loading, .error, .no-subscribers {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  margin-top: 1rem;
+}
+
+.error {
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .subscribers-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box input {
+    width: 100% !important;
+  }
+}

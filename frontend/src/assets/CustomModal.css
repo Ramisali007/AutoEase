@@ -1,0 +1,624 @@
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: modalFadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 16px;
+  width: 95%;
+  max-width: 900px; /* Increased from 600px to 900px */
+  max-height: 95vh; /* Increased from 90vh to 95vh */
+  overflow-y: auto;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  border: none;
+  animation: modalSlideIn 0.4s ease-out;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 35px; /* Increased padding */
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  border-radius: 16px 16px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.8rem; /* Increased font size from 1.5rem to 1.8rem */
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.modal-close {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 1.8rem; /* Increased from 1.5rem to 1.8rem */
+  cursor: pointer;
+  color: white;
+  width: 44px; /* Increased from 36px to 44px */
+  height: 44px; /* Increased from 36px to 44px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(2px);
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 40px; /* Increased padding from 30px to 40px */
+  max-height: 70vh; /* Increased from 60vh to 70vh */
+  overflow-y: auto;
+  line-height: 1.7; /* Increased line height for better readability */
+  background-color: #ffffff;
+  position: relative;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px 35px; /* Increased padding to match header */
+  border-top: 1px solid rgba(67, 97, 238, 0.1);
+  gap: 20px; /* Increased from 15px to 20px */
+  background-color: #f8fafc;
+  border-radius: 0 0 16px 16px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.btn {
+  padding: 14px 30px; /* Increased from 12px 24px to 14px 30px */
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem; /* Increased from 0.95rem to 1.1rem */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Increased from 8px to 10px */
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3a0ca3, #4361ee);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(67, 97, 238, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 30px; /* Increased from 24px to 30px */
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px; /* Increased from 8px to 10px */
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.1rem; /* Increased from 0.95rem to 1.1rem */
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 16px 20px; /* Increased from 12px 16px to 16px 20px */
+  font-size: 1.1rem; /* Increased from 1rem to 1.1rem */
+  line-height: 1.5;
+  color: #1e293b;
+  background-color: #f8fafc;
+  background-clip: padding-box;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px; /* Increased from 12px to 14px */
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  height: 60px; /* Added explicit height */
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 16px 20px; /* Increased from 12px 16px to 16px 20px */
+  font-size: 1.1rem; /* Increased from 1rem to 1.1rem */
+  line-height: 1.5;
+  color: #1e293b;
+  background-color: #f8fafc;
+  background-clip: padding-box;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px; /* Increased from 12px to 14px */
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234361ee' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.5rem center; /* Adjusted from 1rem to 1.5rem */
+  background-size: 18px 14px; /* Increased from 16px 12px to 18px 14px */
+  font-family: 'Poppins', sans-serif;
+  height: 60px; /* Added explicit height */
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #4361ee;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.15);
+  background-color: #fff;
+}
+
+/* Item details styles */
+.item-details {
+  background-color: #f8fafc;
+  border-radius: 16px; /* Increased from 12px to 16px */
+  padding: 30px; /* Increased from 24px to 30px */
+  border-left: 6px solid #4361ee; /* Increased from 4px to 6px */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+  font-family: 'Poppins', sans-serif;
+}
+
+.item-details p {
+  margin-bottom: 20px; /* Increased from 16px to 20px */
+  padding-bottom: 20px; /* Increased from 16px to 20px */
+  border-bottom: 1px solid rgba(67, 97, 238, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.item-details p:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+  border-radius: 10px; /* Increased from 8px to 10px */
+  padding-left: 12px; /* Increased from 8px to 12px */
+  transform: translateX(5px); /* Added subtle movement on hover */
+}
+
+.item-details p:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.item-details p strong {
+  min-width: 180px; /* Increased from 150px to 180px */
+  display: inline-block;
+  color: #1e293b;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem; /* Increased font size */
+}
+
+.car-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Increased from 16px to 20px */
+  margin-top: 20px; /* Increased from 16px to 20px */
+}
+
+.car-image-thumbnail {
+  width: 200px; /* Increased from 140px to 200px */
+  height: 130px; /* Increased from 90px to 130px */
+  object-fit: cover;
+  border-radius: 16px; /* Increased from 12px to 16px */
+  border: 3px solid #e2e8f0; /* Increased from 2px to 3px */
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+.car-image-thumbnail:hover {
+  transform: scale(1.08); /* Increased from 1.05 to 1.08 */
+  box-shadow: 0 10px 20px rgba(67, 97, 238, 0.25); /* Enhanced shadow */
+  border-color: #4361ee;
+}
+
+/* Form field hover effects */
+.form-control:hover, .form-select:hover {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+}
+
+/* Animated label effect */
+.form-group:focus-within .form-label {
+  color: #4361ee;
+  transform: translateY(-2px);
+}
+
+/* Input field icons and enhanced styling */
+.form-group {
+  position: relative;
+}
+
+/* Name field icon */
+.form-group:has(input[name="name"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="name"])::before {
+  content: "👤";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Email field icon */
+.form-group:has(input[name="email"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="email"])::before {
+  content: "✉️";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Phone field icon */
+.form-group:has(input[name="phone"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="phone"])::before {
+  content: "📱";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Role field icon */
+.form-group:has(select[name="role"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="role"])::before {
+  content: "🔑";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Car Brand field icon */
+.form-group:has(input[name="brand"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="brand"])::before {
+  content: "🚗";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Car Model field icon */
+.form-group:has(input[name="model"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="model"])::before {
+  content: "🏎️";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Car Year field icon */
+.form-group:has(input[name="year"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="year"])::before {
+  content: "📅";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Price Per Day field icon */
+.form-group:has(input[name="pricePerDay"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="pricePerDay"])::before {
+  content: "💰";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Availability field icon */
+.form-group:has(select[name="isAvailable"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="isAvailable"])::before {
+  content: "✅";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Start Date field icon */
+.form-group:has(input[name="startDate"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="startDate"])::before {
+  content: "🗓️";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* End Date field icon */
+.form-group:has(input[name="endDate"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="endDate"])::before {
+  content: "📆";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Booking Status field icon */
+.form-group:has(select[name="bookingStatus"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="bookingStatus"])::before {
+  content: "🔄";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Payment Status field icon */
+.form-group:has(select[name="paymentStatus"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="paymentStatus"])::before {
+  content: "💳";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Car Type field icon */
+.form-group:has(select[name="type"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="type"])::before {
+  content: "🚘";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Fuel Type field icon */
+.form-group:has(select[name="fuelType"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="fuelType"])::before {
+  content: "⛽";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Transmission field icon */
+.form-group:has(select[name="transmission"]) .form-select {
+  padding-left: 40px;
+}
+
+.form-group:has(select[name="transmission"])::before {
+  content: "⚙️";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Seating Capacity field icon */
+.form-group:has(input[name="seatingCapacity"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="seatingCapacity"])::before {
+  content: "👥";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Mileage field icon */
+.form-group:has(input[name="mileage"]) .form-control {
+  padding-left: 40px;
+}
+
+.form-group:has(input[name="mileage"])::before {
+  content: "🛣️";
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Form field animations */
+@keyframes formFieldFocus {
+  0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+}
+
+.form-control:focus, .form-select:focus {
+  animation: formFieldFocus 1.5s ease-out;
+}
+
+/* Car edit form grid layout */
+.car-edit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .car-edit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Car image preview */
+.car-image-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px; /* Increased from 10px to 15px */
+  background-color: #f8fafc;
+  padding: 30px; /* Increased from 20px to 30px */
+  border-radius: 16px; /* Increased from 12px to 16px */
+  border: 3px dashed #e2e8f0; /* Increased from 2px to 3px */
+  transition: all 0.3s ease;
+}
+
+.car-image-preview:hover {
+  border-color: #4361ee;
+  background-color: rgba(67, 97, 238, 0.05);
+  transform: translateY(-5px); /* Added subtle lift effect */
+}
+
+.car-image-preview img {
+  width: 280px; /* Increased from 200px to 280px */
+  height: 180px; /* Increased from 140px to 180px */
+  object-fit: cover;
+  border-radius: 16px; /* Increased from 12px to 16px */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  transition: all 0.3s ease;
+  border: 3px solid #e2e8f0; /* Increased from 2px to 3px */
+}
+
+.car-image-preview img:hover {
+  transform: scale(1.08); /* Increased from 1.05 to 1.08 */
+  box-shadow: 0 10px 20px rgba(67, 97, 238, 0.25); /* Enhanced shadow */
+}
+
+.image-note {
+  margin-top: 15px; /* Increased from 10px to 15px */
+  font-size: 1rem; /* Increased from 0.85rem to 1rem */
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Close hint */
+.modal-close-hint {
+  text-align: center;
+  padding: 16px; /* Increased from 12px to 16px */
+  font-size: 1rem; /* Increased from 0.8rem to 1rem */
+  color: #64748b;
+  background-color: #f8fafc;
+  border-top: 1px solid rgba(67, 97, 238, 0.1);
+  border-radius: 0 0 16px 16px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 500; /* Added font weight */
+}

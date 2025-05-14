@@ -1,0 +1,277 @@
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.file-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-input:disabled {
+  cursor: not-allowed;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #e9ecef;
+  border: 1px dashed #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.file-label:hover {
+  background-color: #dee2e6;
+}
+
+.file-info {
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.file-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.upload-error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.upload-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: #0069d9;
+}
+
+.upload-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.upload-button.uploading {
+  background-color: #6c757d;
+}
+
+.upload-button.success {
+  background-color: #28a745;
+}
+
+/* Document list styles */
+.document-list {
+  margin-top: 1.5rem;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.document-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.document-icon {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.document-details h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.document-details p {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.document-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.document-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 1rem;
+  padding: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.document-action-btn:hover {
+  color: #212529;
+}
+
+.document-action-btn.delete:hover {
+  color: #dc3545;
+}
+
+.document-action-btn.view:hover {
+  color: #007bff;
+}
+
+/* Car image upload styles */
+.car-image-upload-container {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.existing-images-container {
+  margin-bottom: 20px;
+}
+
+.existing-images h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.image-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-thumbnail-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.image-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(220, 53, 69, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-image-btn:hover {
+  background-color: rgba(220, 53, 69, 1);
+}
+
+.file-list {
+  list-style: none;
+  padding-left: 10px;
+  margin: 5px 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.file-list li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .document-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .document-actions {
+    align-self: flex-end;
+  }
+
+  .image-thumbnails {
+    justify-content: center;
+  }
+}

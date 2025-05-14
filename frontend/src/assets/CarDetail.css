@@ -1,0 +1,645 @@
+.car-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.car-detail-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.car-detail-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.car-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.rating-count {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.car-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.car-images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-images {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.thumbnail-images img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  background-color: #000;
+}
+
+.thumbnail-images img:hover {
+  transform: translateY(-2px);
+}
+
+.thumbnail-images img.active {
+  border-color: #007bff;
+}
+
+.car-booking-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.car-price {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.price-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-left: 0.5rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.date-pickers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.date-picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-picker-container label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.date-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.booking-summary {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+}
+
+.summary-item.total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  font-weight: bold;
+  color: #333;
+}
+
+.booking-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.booking-button:hover {
+  background-color: #0069d9;
+}
+
+.booking-button.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.availability-warning {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.car-details-section,
+.car-description-section,
+.host-details-section,
+.car-features-section,
+.car-reviews-section {
+  margin-bottom: 2rem;
+}
+
+.car-details-section h2,
+.car-description-section h2,
+.car-features-section h2,
+.car-reviews-section h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.host-details-section h2 {
+  font-size: 1.8rem;
+  color: #0056b3;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0056b3;
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.host-details-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0056b3, #4cc9f0);
+  border-radius: 2px;
+}
+
+/* Host details styling */
+.host-profile-container {
+  background-color: #f8f9fa;
+  background-image: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.host-profile-container:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.host-profile-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.host-avatar {
+  flex-shrink: 0;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.host-avatar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.host-avatar img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.host-avatar:hover img {
+  transform: scale(1.05);
+}
+
+.host-info {
+  flex-grow: 1;
+}
+
+.host-info h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.admin-host-name {
+  color: #0056b3;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.admin-host-name:hover {
+  color: #003d7a;
+}
+
+.admin-host-avatar {
+  position: relative;
+  background: linear-gradient(145deg, #e6f2ff, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 86, 179, 0.2);
+}
+
+.admin-host-avatar img {
+  border: none;
+  box-shadow: none;
+}
+
+.admin-avatar-badge {
+  display: none; /* Hide the admin avatar badge */
+}
+
+.host-name-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.admin-badge-label {
+  display: none; /* Hide the admin badge */
+}
+
+.admin-badge-label:hover {
+  background-color: #d1e6ff;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.2);
+  transform: translateY(-2px);
+}
+
+.host-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.host-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.host-stat:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.host-bio {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: #495057;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  font-size: 1.05rem;
+}
+
+.host-contact {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-contact-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-host-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-host-btn:hover {
+  background-color: #218838;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.contact-host-btn.email-btn {
+  background-color: #28a745;
+}
+
+.contact-host-btn.email-btn:hover {
+  background-color: #218838;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.contact-host-btn.chat-btn {
+  background-color: #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.contact-host-btn.chat-btn:hover {
+  background-color: #0069d9;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: #333;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.feature-item {
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reviewer-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.review-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.review-comment {
+  color: #495057;
+  line-height: 1.5;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.error-container {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .car-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .car-booking-container {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .host-profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .host-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .host-contact {
+    justify-content: center;
+  }
+
+  .host-details-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .admin-badge-label {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .car-detail-container {
+    padding: 1rem;
+  }
+
+  .car-detail-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-image {
+    height: 250px;
+  }
+
+  .date-pickers {
+    grid-template-columns: 1fr;
+  }
+
+  .host-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .host-avatar img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .host-profile-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .host-bio {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-host-btn {
+    width: 100%;
+  }
+}

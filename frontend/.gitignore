@@ -1,0 +1,13 @@
+node_modules
+# Large media files
+*.mp4
+build/*.mp4
+public/*.mp4
+# Exclude build directory
+build/
+# Exclude large images
+*.jpg
+*.jpeg
+public/images/
+build/images/
+
